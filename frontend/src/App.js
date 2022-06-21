@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {useState,useEffect} from 'react';
+const axios = require('axios')
 function App() {
+  const [num,setNum] = useState(99);
+  const [get,setGet] = useState(false);
+  const getRandomNum = async () => {
+    try{
+      const getRandomNumData = await axios({
+        url:"/image",
+        method:"get",
+      });
+      setNum(getRandomNumData.data.Hello);
+      console.log(num)
+      console.log(getRandomNumData.data)
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
+
+  useEffect(()=>{
+    if(get){
+      getRandomNum()
+    }
+  },[get])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Number is {num}</h1>
+      <input type="Text"/>
+      <button onClick={()=>setGet(true)}>Submit</button>
     </div>
   );
 }
