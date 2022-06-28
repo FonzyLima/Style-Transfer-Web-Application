@@ -1,0 +1,173 @@
+@import '_var.scss';
+
+.inputsec {
+    margin: 100px 0;
+    // height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .inputContainer {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        gap: 35px;
+        // max-width: 1140px;
+        .back {
+            font-size: 20px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+            width: fit-content;
+            cursor: pointer;
+            transition: .2s;
+            &:hover {
+                color: $green;
+                gap: 15px;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .title {
+                font-weight: $fw-semibold;
+                font-size: $fs-24px;
+                margin-bottom: 10px;
+            }
+            .action {
+                font-size: $fs-18px;
+                font-weight: $fw-light;
+                margin-bottom: 30px;
+            }
+            .left {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                gap: 40px;
+                input {
+                    width: 100%;
+                    background-color: $darkgrey3;
+                    border-radius: $br;
+                    padding: 12px 12px;
+                    border: none;
+                    color: $darkgrey2;
+                    box-sizing: border-box;
+                }
+                input[type=file]::file-selector-button {
+                    color: $blue;
+                    background-color: $green;
+                    border: none;
+                    padding: 12px 17.2px;
+                    font-weight: bold;
+                    border-radius: $br;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    transition: .2s;
+                    &:hover {
+                        background-color: $white;
+                        svg {
+                            margin-left: 15px;
+                        }
+                    }
+                }
+                .row {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    gap:30px;
+                    .image {
+                        width: 100%;
+                        height: 165px;
+                        gap: 30px;
+                        background-size: cover;
+                        border-radius: $br;
+                        transition: .1s;
+                        opacity: 50%;
+                    }
+                    .image1 {
+                        background-image: url(../assets/img1.png);
+                        margin-bottom: 30px;
+                    }
+                    .image2 {
+                        background-image: url(../assets/img2.png);
+                    }
+                    .image3 {
+                        background-image: url(../assets/img3.png);
+                    }
+                    .image4 {
+                        background-image: url(../assets/img4.png);
+                    }
+                    .image5 {
+                        background-image: url(../assets/img5.png);
+                    }
+                    .image6 {
+                        background-image: url(../assets/img6.png);
+                    }
+    
+                    .radio-img {
+                        width: 100%;
+                        > input { 
+                            display:none;
+                        }
+    
+                        > .image{
+                            cursor:pointer;
+                        }
+    
+                        > input:checked + .image { 
+                            opacity: 100%;
+                        }
+                    }
+                }
+                
+                
+            }
+            .right {
+                display: flex;
+                flex-direction: column;
+                width: 40%;
+                gap: 40px;
+                .selected {
+                    .selectedimg {
+                        width: 100%;
+                        height: 220px;
+                        border-radius: $br;
+                        background-color: $darkgrey;
+                    }
+                }
+                .style {
+                    .styleimg {
+                        width: 100%;
+                        height: 220px;
+                        border-radius: $br;
+                        background-color: $darkgrey;
+                    }
+                }
+                input {
+                    padding: 10px 0;
+                    font-size: 14px;
+                    color: $blue;
+                    font-weight: $fw-bold;
+                    width: 100%;
+                    border: none;
+                    background-color: $green;
+                    border-radius: $br;
+                    cursor: pointer;
+                    transition: .2s;
+                    &:hover {
+                        background-color: $white;
+                        svg {
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

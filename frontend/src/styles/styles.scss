@@ -2,9 +2,12 @@
 @import '_nav.scss';
 @import '_var.scss';
 @import '_home.scss';
+@import '_input.scss';
 
 html {
     font-family: 'Poppins', sans-serif;
     background-color: black;
     color: $white;
+    margin: 0;
+    padding: 0;
 }

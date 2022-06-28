@@ -36,17 +36,23 @@
                 border-radius: $br;
                 border: none;
                 font-size: 14px;
-                width: 100px;
+                width: fit-content;
+                padding: 0 15px;
                 height: 40px;
                 font-weight: $fw-bold;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 cursor: pointer;
+                transition: .2s;
                 svg {
                     margin-left: 10px;
-                    &:hover {
-                        margin-left: 20px;
+                    transition: .2s;
+                }
+                &:hover {
+                    background-color: $white;
+                    svg {
+                        margin-left: 15px;
                     }
                 }
             }

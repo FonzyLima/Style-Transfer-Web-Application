@@ -6,10 +6,10 @@ function Nav() {
     return (
         <nav>
             <div className='navcontent'>
-                <div className='logo'>Style Transfer</div>
+                <div className='logo'>DIGIMAP Style Transfer</div>
                 <div className='right'>
-                <Link className='home' to="/">Home</Link>
-                <Link className='demo' to="/Input">Demo</Link>
+                    <Link className='home' to="/">Home</Link>
+                    <Link className='demo' to="/Input">Demo</Link>
                 </div>
             </div>
         </nav>
