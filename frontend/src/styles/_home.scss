@@ -35,7 +35,7 @@
                 color: $blue;
                 border-radius: $br;
                 border: none;
-                font-size: $fs-14px;
+                font-size: 14px;
                 width: 100px;
                 height: 40px;
                 font-weight: $fw-bold;
@@ -45,6 +45,9 @@
                 cursor: pointer;
                 svg {
                     margin-left: 10px;
+                    &:hover {
+                        margin-left: 20px;
+                    }
                 }
             }
         }
