@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
 import {useState,useEffect} from 'react';
 const axios = require('axios')
 function App() {

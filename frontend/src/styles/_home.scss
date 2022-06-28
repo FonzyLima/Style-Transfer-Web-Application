@@ -1,0 +1,58 @@
+@import '_var.scss';
+
+.homesec {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .homeComponents {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 10%;
+        .intro {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            // border: 2px solid green;
+            gap: 20px;
+            .grp {
+                color: $green;
+                font-size: $fs-16px;
+            }
+            .title {
+                font-weight: $fw-bold;
+                font-size: $fs-48px;
+            }
+            .desc {
+                font-size: $fs-18px;
+                width: 80%;
+            }
+            .btn-demo {
+                background-color: $green;
+                color: $blue;
+                border-radius: $br;
+                border: none;
+                font-size: $fs-14px;
+                width: 100px;
+                height: 40px;
+                font-weight: $fw-bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                svg {
+                    margin-left: 10px;
+                }
+            }
+        }
+        .pic {
+            width: 50%;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

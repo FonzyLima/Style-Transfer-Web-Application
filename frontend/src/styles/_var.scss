@@ -1,0 +1,44 @@
+// Colors
+$blue: #0D3866;
+$green: #13CF8F;
+$darkgrey: #232323;
+$darkgrey2: #5F5F5F;
+$black: #000000;
+$white: #FFFFFF;
+
+// Font Weights
+$fw-thin: 100;
+$fw-tralight: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+$fw-xtrabold: 800;
+$fw-black: 900;
+
+// Font Sizes
+$fs-64px: clamp(2rem, 5vw, 4rem); //64px
+$fs-62px: clamp(2rem, 5vw, 3.875rem); //62px
+$fs-60px: clamp(2rem, 5vw, 3.75rem); //60px
+$fs-48px: clamp(1.8rem, 4vw, 3rem); //48px
+$fs-14px: clamp(.5rem, 1vw,0.875rem); //14px
+$fs-16px: clamp(.813rem, 1.5vw, 1rem); //16px
+$fs-18px: clamp(.813rem, 1.8vw, 1.125rem); //18px
+$fs-20px: clamp(0.875rem, 2vw, 1.25rem); //20px
+$fs-24px: clamp(1rem, 2.125vw, 1.5rem); //24px
+$fs-icon-100: clamp(0.3rem, 1.2vw, .8rem);
+$fs-icon-200: clamp(0.5rem, 1.5vw, 1rem);
+
+//Border Radius
+$br: 8px;
+
+// Margin Bottom
+$m-bottom-var1: 40px;
+$m-bottom-var2: 30px;
+
+// Global Declaration
+a, a:hover, a:focus, a:active {
+    text-decoration: none; //Removes underline
+    color: inherit; //No color when hover, focused, or active
+}
