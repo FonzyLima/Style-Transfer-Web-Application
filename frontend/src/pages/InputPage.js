@@ -1,7 +1,16 @@
 import React from 'react'
 import '../styles/styles.scss';
+import { useState } from "react";
+import style1 from '../assets/img1.png';
+import style2 from '../assets/img2.png';
 
-export default function InputPage() {
+function InputPage() {
+  const [file, setFile] = useState();
+  const [styled, setStyle] = useState();
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
   return (
     <section className='inputsec'>
       <div className='inputContainer'>
@@ -18,7 +27,7 @@ export default function InputPage() {
               <div className='step1'>
                 <div className='title'>Step 1</div>
                 <div className='action'>Upload Image</div>
-                <input type="file" />
+                <input type="file" onChange={handleChange} />
               </div>
               <div className='step2'>
                 <div className='title'>Step 2</div>
@@ -57,13 +66,13 @@ export default function InputPage() {
               <div className='selected'>
                 <div className='title'>Image Selected</div>
                 <div className='selectedimg'>
-                  <img src=''></img>
+                  <img src={file}></img>
                 </div>
               </div>
               <div className='style'>
                 <div className='title'>Style Image</div>
                 <div className='styleimg'>
-                  <img src=''></img>
+                  <img id='styled' ></img>
                 </div>
               </div>
               <input type='submit'/>
@@ -74,3 +83,5 @@ export default function InputPage() {
     </section>
   )
 }
+
+export default InputPage;
