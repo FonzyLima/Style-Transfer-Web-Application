@@ -1,7 +1,9 @@
 import React from 'react'
 import '../styles/styles.scss';
+import {useLocation} from 'react-router-dom';
 
 export default function OutputPage() {
+  const location = useLocation();
   return (
     <section className='outputsec'>
       <div className='inputContainer'>
@@ -29,13 +31,13 @@ export default function OutputPage() {
               <div className='selected'>
                 <div className='title'>Image Selected</div>
                 <div className='selectedimg'>
-                  <img src=''></img>
+                  <img src={location.state.f}></img>
                 </div>
               </div>
               <div className='style'>
                 <div className='title'>Style Image</div>
                 <div className='styleimg'>
-                  <img src=''></img>
+                  <img src={location.state.s}></img>
                 </div>
               </div>
             </div>
