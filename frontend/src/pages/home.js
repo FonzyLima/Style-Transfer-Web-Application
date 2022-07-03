@@ -1,5 +1,5 @@
 import '../styles/styles.scss';
-const axios = require('axios');
+
 
 function Home() {
     return (

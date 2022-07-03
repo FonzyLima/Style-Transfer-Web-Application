@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/styles.scss';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import img1 from '../assets/img1.png';
 import img2 from '../assets/img2.png';
 import img3 from '../assets/img3.png';
@@ -8,13 +8,32 @@ import img4 from '../assets/img4.png';
 import img5 from '../assets/img5.png';
 import img6 from '../assets/img6.png';
 import {useNavigate} from 'react-router-dom';
-
+const axios = require('axios');
 
 function InputPage() {
   const [file, setFile] = useState();
   const [styled, setStyle] = useState();
+  const [submit, setSubmit] = useState(false);
   const navigate = useNavigate();
-
+  const sendData = async () =>{
+    try{
+      let data = file
+      const sendPicData = await axios({
+        url: "/image",
+        method:"post",
+        data: {data}
+      });
+      console.log(sendPicData.data)
+    } catch(err){
+      console.log(err)
+    }
+  }
+  useEffect(()=>{
+    if(submit){
+      sendData();
+    }
+    
+  },[submit])
   function handleChange(e) {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
@@ -110,6 +129,7 @@ function InputPage() {
               <input type='submit'/>
             </div>
           </form>
+          <button onClick={()=>setSubmit(true)}> CLICK</button>
         </div>
       </div>
     </section>
