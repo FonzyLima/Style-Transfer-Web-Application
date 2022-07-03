@@ -13,10 +13,13 @@ import {useNavigate} from 'react-router-dom';
 function InputPage() {
   const [file, setFile] = useState();
   const [styled, setStyle] = useState();
+  const navigate = useNavigate();
+  
   function handleChange(e) {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
   }
+
   function handleClick(e, name) {
     if(name == 'style1')
     setStyle(img1)
@@ -31,12 +34,15 @@ function InputPage() {
     if(name == 'style6')
     setStyle(img6)
   }
-  const navigate = useNavigate();
 
   const handleSubmit = event => {
     event.preventDefault();
-    navigate('/Output', {state:{s:styled,f:file}});
+    navigate('/Output', {state: {
+      s: styled,
+      f: file}
+    });
   };
+
   return (
     <section className='inputsec'>
       <div className='inputContainer'>

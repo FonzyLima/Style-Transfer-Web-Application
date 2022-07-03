@@ -3,7 +3,7 @@ import '../styles/styles.scss';
 import {useLocation} from 'react-router-dom';
 
 export default function OutputPage() {
-  const location = useLocation();
+  const prev = useLocation();
   return (
     <section className='outputsec'>
       <div className='inputContainer'>
@@ -31,13 +31,13 @@ export default function OutputPage() {
               <div className='selected'>
                 <div className='title'>Image Selected</div>
                 <div className='selectedimg'>
-                  <img src={location.state.f}></img>
+                  <img src={prev.state.f}></img>
                 </div>
               </div>
               <div className='style'>
                 <div className='title'>Style Image</div>
                 <div className='styleimg'>
-                  <img src={location.state.s}></img>
+                  <img src={prev.state.s}></img>
                 </div>
               </div>
             </div>
