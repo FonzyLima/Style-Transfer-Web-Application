@@ -19,7 +19,7 @@ export default function OutputPage() {
             <div className='left'>
               <div className='step1'>
                 <div className='title'>Output</div>
-                <img className='outputimg'></img>
+                <img className='outputimg' alt='output'></img>
                 <button>Download Image</button>
               </div>
               <div className='step2'>
@@ -31,13 +31,13 @@ export default function OutputPage() {
               <div className='selected'>
                 <div className='title'>Image Selected</div>
                 <div className='selectedimg'>
-                  <img src={prev.state.f}></img>
+                  <img src={prev.state.f} alt='upload-file'></img>
                 </div>
               </div>
               <div className='style'>
                 <div className='title'>Style Image</div>
                 <div className='styleimg'>
-                  <img src={prev.state.s}></img>
+                  <img src={prev.state.s} alt='style-type'></img>
                 </div>
               </div>
             </div>

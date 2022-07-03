@@ -14,24 +14,24 @@ function InputPage() {
   const [file, setFile] = useState();
   const [styled, setStyle] = useState();
   const navigate = useNavigate();
-  
+
   function handleChange(e) {
     console.log(e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
   }
 
   function handleClick(e, name) {
-    if(name == 'style1')
+    if(name === 'style1')
     setStyle(img1)
-    if(name == 'style2')
+    if(name === 'style2')
     setStyle(img2)
-    if(name == 'style3')
+    if(name === 'style3')
     setStyle(img3)
-    if(name == 'style4')
+    if(name === 'style4')
     setStyle(img4)
-    if(name == 'style5')
+    if(name === 'style5')
     setStyle(img5)
-    if(name == 'style6')
+    if(name === 'style6')
     setStyle(img6)
   }
 
@@ -98,13 +98,13 @@ function InputPage() {
               <div className='selected'>
                 <div className='title'>Image Selected</div>
                 <div className='selectedimg'>
-                  <img src={file}></img>
+                  <img src={file} alt='upload-file'></img>
                 </div>
               </div>
               <div className='style'>
                 <div className='title'>Style Image</div>
                 <div className='styleimg'>
-                  <img id='styled' src={styled}></img>
+                  <img id='styled' src={styled} alt='style-type'></img>
                 </div>
               </div>
               <input type='submit'/>
