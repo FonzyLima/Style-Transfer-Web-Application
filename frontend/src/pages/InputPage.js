@@ -11,31 +11,35 @@ import {useNavigate} from 'react-router-dom';
 const axios = require('axios');
 
 function InputPage() {
-  const [file, setFile] = useState();
-  const [styled, setStyle] = useState();
+  const [file, setFile] = useState(null);
+  const [styled, setStyle] = useState(null);
   const [submit, setSubmit] = useState(false);
+  const [data,setData] = useState(null);
   const navigate = useNavigate();
-  const sendData = async () =>{
-    try{
-      let data = file
-      const sendPicData = await axios({
-        url: "/image",
-        method:"post",
-        data: {data}
-      });
-      console.log(sendPicData.data)
-    } catch(err){
-      console.log(err)
-    }
-  }
-  useEffect(()=>{
-    if(submit){
-      sendData();
-    }
+
+  // const sendData = async () =>{
+  //   try{
+  //     let data = file
+  //     let data2 = new FormData()
+  //     data2.append("file",file);
+  //     const sendPicData = await axios({
+  //       url: "/image",
+  //       method:"post",
+  //       data: {data2}
+  //     });
+  //     console.log(sendPicData.data)
+  //   } catch(err){
+  //     console.log(err)
+  //   }
+  // }
+  // useEffect(()=>{
+  //   if(submit){
+  //     sendData();
+  //   }
     
-  },[submit])
+  // },[submit])
   function handleChange(e) {
-    console.log(e.target.files);
+    console.log("Hello"+e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
   }
 
@@ -56,10 +60,21 @@ function InputPage() {
 
   const handleSubmit = event => {
     event.preventDefault();
+    const formData = new FormData(event.target);
     navigate('/Output', {state: {
       s: styled,
       f: file}
     });
+    const Upload = async() => {
+      await fetch('/image', {
+        method: 'POST',
+        body: formData
+      }).then(resp => {
+        resp.json().then(data => {console.log(data)})
+      })
+    }
+    Upload();
+    console.log(event)
   };
 
   return (
@@ -78,12 +93,13 @@ function InputPage() {
               <div className='step1'>
                 <div className='title'>Step 1</div>
                 <div className='action'>Upload Image</div>
-                <input type="file" onChange={handleChange} />
+                <input type="file" accept="image/*" name="file" onChange={handleChange} />
               </div>
               <div className='step2'>
                 <div className='title'>Step 2</div>
                 <div className='action'>Choose a style</div>
-                <div className='row'>
+                <input type="file" accept="image/*" name="style"/>
+                {/* <div className='row'>
                   <label className="radio-img">
                     <input type="radio" name="style" value="style1" onClick={(event) => handleClick(event, 'style1')}/>
                     <div className="image image1"></div>
@@ -110,7 +126,7 @@ function InputPage() {
                     <input type="radio" name="style" value="style6" onClick={(event) => handleClick(event, 'style6')}/>
                     <div className="image image6"></div>
                   </label>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className='right'>
@@ -126,10 +142,10 @@ function InputPage() {
                   <img id='styled' src={styled} alt='style-type'></img>
                 </div>
               </div>
-              <input type='submit'/>
+              <input type='submit'></input>
             </div>
           </form>
-          <button onClick={()=>setSubmit(true)}> CLICK</button>
+          {/* <button onClick={()=>setSubmit(true)}> CLICK</button> */}
         </div>
       </div>
     </section>

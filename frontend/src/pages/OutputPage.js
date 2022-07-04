@@ -1,9 +1,11 @@
 import React from 'react'
 import '../styles/styles.scss';
 import {useLocation} from 'react-router-dom';
-
+import {useState, useEffect} from 'react';
+const axios = require('axios');
 export default function OutputPage() {
   const prev = useLocation();
+  
   return (
     <section className='outputsec'>
       <div className='inputContainer'>
@@ -19,7 +21,7 @@ export default function OutputPage() {
             <div className='left'>
               <div className='step1'>
                 <div className='title'>Output</div>
-                <img className='outputimg' alt='output'></img>
+                <img className='outputimg' alt='output' src="http://localhost:5000/get/generated_img"></img>
                 <button>Download Image</button>
               </div>
               <div className='step2'>
