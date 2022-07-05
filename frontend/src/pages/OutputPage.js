@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/styles.scss';
 import {useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom'
 import {useState, useEffect} from 'react';
 const axios = require('axios');
 export default function OutputPage() {
@@ -9,13 +10,13 @@ export default function OutputPage() {
   return (
     <section className='outputsec'>
       <div className='inputContainer'>
-        <a href='/Input' className='back'>
+        <Link to='/Input' className='back'>
           <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M27 16H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M14 7L5 16L14 25" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           Back
-        </a>
+        </Link>
         <div className='inputComponents'>
           <form>
             <div className='left'>
