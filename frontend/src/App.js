@@ -2,7 +2,7 @@ import logo from './logo.svg';
 
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Nav from "./pages/Nav"
-import Home from "./pages/Home.js"
+import Home from "./pages/Home"
 import InputPage from './pages/InputPage';
 import OutputPage from './pages/OutputPage';
 function App() {
