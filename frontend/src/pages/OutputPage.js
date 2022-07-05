@@ -22,7 +22,7 @@ export default function OutputPage() {
             <div className='left'>
               <div className='step1'>
                 <div className='title'>Output</div>
-                <img className='outputimg' alt='output' src="https://tbdigimap.netlify.app/get/generated_img"></img>
+                <img className='outputimg' alt='output' src="https://tbdigimap.herokuapp.com/get/generated_img"></img>
                 <button>Download Image</button>
               </div>
               <div className='step2'>
