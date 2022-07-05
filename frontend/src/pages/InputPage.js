@@ -38,9 +38,14 @@ function InputPage() {
   //   }
     
   // },[submit])
-  function handleChange(e) {
+  function handleFileChange(e) {
     console.log("Hello"+e.target.files);
     setFile(URL.createObjectURL(e.target.files[0]));
+  }
+
+  function handleStyleChange(e) {
+    console.log("Hello"+e.target.files);
+    setStyle(URL.createObjectURL(e.target.files[0]));
   }
 
   function handleClick(e, name) {
@@ -58,19 +63,23 @@ function InputPage() {
     setStyle(img6)
   }
 
+  
+
   const handleSubmit = event => {
+    
     event.preventDefault();
     const formData = new FormData(event.target);
-    navigate('/Output', {state: {
-      s: styled,
-      f: file}
-    });
+    
     const Upload = async() => {
       await fetch('/image', {
         method: 'POST',
         body: formData
       }).then(resp => {
         resp.json().then(data => {console.log(data)})
+        navigate('/Output', {state: {
+          s: styled,
+          f: file}
+        });
       })
     }
     Upload();
@@ -93,12 +102,12 @@ function InputPage() {
               <div className='step1'>
                 <div className='title'>Step 1</div>
                 <div className='action'>Upload Image</div>
-                <input type="file" accept="image/*" name="file" onChange={handleChange} />
+                <input type="file" accept="image/*" name="file" onChange={handleFileChange} />
               </div>
               <div className='step2'>
                 <div className='title'>Step 2</div>
                 <div className='action'>Choose a style</div>
-                <input type="file" accept="image/*" name="style"/>
+                <input type="file" accept="image/*" name="style" onChange={handleStyleChange}/>
                 {/* <div className='row'>
                   <label className="radio-img">
                     <input type="radio" name="style" value="style1" onClick={(event) => handleClick(event, 'style1')}/>
