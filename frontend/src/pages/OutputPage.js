@@ -23,7 +23,6 @@ export default function OutputPage() {
               <div className='step1'>
                 <div className='title'>Output</div>
                 <img className='outputimg' alt='output' src="https://tbdigimap.herokuapp.com/get/generated_img"></img>
-                <button>Download Image</button>
               </div>
               <div className='step2'>
                 
