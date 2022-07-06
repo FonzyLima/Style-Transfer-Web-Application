@@ -71,7 +71,7 @@ function InputPage() {
     const formData = new FormData(event.target);
     
     const Upload = async() => {
-      await fetch('/image', {
+      await fetch('https://tbdigimap.herokuapp.com/image', {
         method: 'POST',
         body: formData
       }).then(resp => {
