@@ -24,16 +24,16 @@ def image():
     styles = request.files["style"]
     print(styles.filename)
     print(files.filename)
-    filename = secure_filename(files.filename)
-    stylename = secure_filename(styles.filename)
-    files.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    styles.save(os.path.join(app.config['STYLE_FOLDER'], stylename))
-    content_img = tf.io.read_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    content_img = tf.image.decode_image(content_img, channels=3)
+    # filename = secure_filename(files.filename)
+    # stylename = secure_filename(styles.filename)
+    # files.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    # styles.save(os.path.join(app.config['STYLE_FOLDER'], stylename))
+    # content_img = tf.io.read_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    content_img = tf.image.decode_image(files, channels=3)
     content_img = tf.image.convert_image_dtype(content_img, tf.float32)
     content_img = content_img[tf.newaxis, :]
-    style_img = tf.io.read_file(os.path.join(app.config['STYLE_FOLDER'], stylename))
-    style_img = tf.image.decode_image(style_img, channels=3)
+    # style_img = tf.io.read_file(os.path.join(app.config['STYLE_FOLDER'], stylename))
+    style_img = tf.image.decode_image(styles, channels=3)
     style_img = tf.image.convert_image_dtype(style_img, tf.float32)
     style_img = style_img[tf.newaxis, :]
     stylized_image = model(tf.constant(content_img), tf.constant(style_img))[0]
