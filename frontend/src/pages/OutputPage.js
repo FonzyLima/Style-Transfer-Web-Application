@@ -22,7 +22,7 @@ export default function OutputPage() {
             <div className='left'>
               <div className='step1'>
                 <div className='title'>Output</div>
-                <img className='outputimg' alt='output' src="http://130.211.125.26:5000/get/generated_img"></img>
+                <img className='outputimg' alt='output' src="https://avid-sunset-355516.as.r.appspot.com/get/generated_img"></img>
                 <button>Download Image</button>
               </div>
               <div className='step2'>
