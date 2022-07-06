@@ -1,4 +1,5 @@
 from flask import Flask, flash, request, redirect, url_for, session, send_file
+from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
 import logging
@@ -15,6 +16,7 @@ STYLE_FOLDER = "./styles"
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
+CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config["STYLE_FOLDER"] = STYLE_FOLDER
 model = hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
