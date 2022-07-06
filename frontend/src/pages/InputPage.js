@@ -73,7 +73,8 @@ function InputPage() {
     const Upload = async() => {
       await fetch('https://tbdigimap.herokuapp.com/image', {
         method: 'POST',
-        body: formData
+        body: formData,
+        mode: 'cors'
       }).then(resp => {
         resp.json().then(data => {console.log(data)})
         navigate('/Output', {state: {
