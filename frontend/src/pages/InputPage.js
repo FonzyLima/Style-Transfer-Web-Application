@@ -109,7 +109,7 @@ function InputPage() {
                 <div className='title'>Step 2</div>
                 <div className='action'>Choose a style</div>
                 <input type="file" accept="image/*" name="style" onChange={handleStyleChange}/>
-                <div className='disc'>Disclaimer: Only upload images less than 1MB. </div>
+                <div className='disc'>Disclaimer: Only upload images less than 100kb. </div>
                 {/* <div className='row'>
                   <label className="radio-img">
                     <input type="radio" name="style" value="style1" onClick={(event) => handleClick(event, 'style1')}/>
